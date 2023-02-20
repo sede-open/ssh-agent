@@ -1,6 +1,6 @@
 const os = require('os');
 
-module.exports = (process.env['OS'] != 'Windows_NT') ? {
+module.exports = (process.env['OS'] !== 'Windows_NT') ? {
     // Use getent() system call, since this is what ssh does; makes a difference in Docker-based
     // Action runs, where $HOME is different from the pwent
     homePath: os.userInfo().homedir,
